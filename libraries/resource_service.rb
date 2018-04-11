@@ -25,4 +25,7 @@ class ElasticsearchCookbook::ServiceResource < Chef::Resource::LWRPBase
   # allow overridable systemd unit
   attribute(:systemd_source, kind_of: String, default: 'systemd_unit.erb')
   attribute(:systemd_cookbook, kind_of: String, default: 'elasticsearch')
+
+  # allow overridable startup_timeout for ubuntu/debian initscript templates
+  attribute(:startup_timeout, kind_of: String, default: '10')
 end
